@@ -17,6 +17,14 @@ function CardsDisplay() {
         updateCards(copy);
     }
 
+    const backToTop = async () => {
+        window.scrollTo({
+            top: 0, 
+            left: 0,
+            behavior: 'smooth'
+        });
+    }
+
     const mappedCards = cards.map(card => {
         card.show = true;
         card.class = null;
@@ -32,6 +40,7 @@ function CardsDisplay() {
                 <div className="flex-wrap max-w-90-percent card-list">
                     {mappedCards}
                 </div>
+                <button className="back-to-top-btn" onClick={backToTop}>Back to Top</button>
             </div>
         </div>
     )
